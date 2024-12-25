@@ -1,4 +1,4 @@
-﻿#include <fstream>
+#include <fstream>
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -627,11 +627,23 @@ public:
 
 };
 
-int main()
+int main(int argc, char* argv[])
 {
-    //ModeSelector* mode = new DefaultMode();
-    ModeSelector* mode = new LoadFileMode();
-    UserInterfaceWrap* UI = new UserInterfaceWrap(mode, "expl.txt");
+    ModeSelector* mode;
+    std::string file = std::string("");
+    if (argc == 1)
+        mode = new DefaultMode();
+    else if (argc == 2)
+    {
+        mode = new LoadFileMode();
+        file = std::string(argv[1]);
+    }
+    else
+    {
+        std::cout << "Too many arguments" << std::endl;
+        exit(1);
+    }
+    UserInterfaceWrap* UI = new UserInterfaceWrap(mode, file);
     UI->Start();
     return 0;
 }
