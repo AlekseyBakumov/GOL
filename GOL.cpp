@@ -8,7 +8,7 @@
 #define CLEAR_SCREEN system("cls");
 #else
 #include <unistd.h>
-#define CLEAR_SCREEN system("reset");
+#define CLEAR_SCREEN system("clear");
 #endif
 
 #define ACTIVE_CELL_CHAR '#'
@@ -25,7 +25,7 @@ void sleepcp(int milliseconds)
 #ifdef _WIN32
     Sleep(milliseconds);
 #else
-    usleep(milliseconds * 1000);
+    usleep(milliseconds * 10000);
 #endif
 }
 
