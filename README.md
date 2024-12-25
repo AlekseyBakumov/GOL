@@ -1,7 +1,8 @@
 # GOL
-Game of Life
-Supposed to work on both windows and linux
+Game of Life</br>
+Supposed to work on both windows and linux</br>
 -To run on Linux:
 1) g++ GOL.cpp -o main
-2) ./main
-- For Windows works any C++ compiler
+2) ./main</br>
+
+For Windows works any C++ compiler
